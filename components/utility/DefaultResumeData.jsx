@@ -1,141 +1,191 @@
 const DefaultResumeData = {
   name: "ISMAIL KATTAKATH",
-  position: "Full Stack Software Engineer (AI)",
-  contactInformation: "+1 (226) 241-0205",
+  position: "Full Stack Software Engineer",
+  contactInformation: "+1 (647) 225-2878",
   email: "ismail@kattakath.com",
   address: "242 John Garland Blvd, Etobicoke, ON M9V 1N8",
   profilePicture: "",
   socialMedia: [
     {
-      socialMedia: "Github",
-      link: "github.com/aloshy-ai",
+      socialMedia: "Website",
+      link: "ismail.kattakath.com",
     },
     {
       socialMedia: "LinkedIn",
       link: "linkedin.com/in/ismailkattakath",
     },
+    {
+      socialMedia: "Github",
+      link: "github.com/aloshy-ai",
+    },
   ],
-  summary: "Principal Software Engineer with 15+ years of experience in full-stack web development across modern JavaScript ecosystems, specializing in SSO/federated authentication systems, CI/CD pipelines, and cloud-native distributed architectures. Currently architecting and optimizing production-ready AI inference and RAG systems, centralized MCP Gateways, multi-agent LLM workflows, and scalable generative pipelines.",
+  summary:
+    "Principal Software Engineer with 15+ years of experience in full-stack web development across modern JavaScript ecosystems, specializing in SSO/federated authentication systems, CI/CD pipelines, and cloud-native distributed architectures. Currently architecting and optimizing production-ready AI inference and RAG systems, centralized MCP Gateways, multi-agent LLM workflows, and scalable generative pipelines.",
   education: [
     {
       school: "Mahatma Gandhi University, India",
       degree: "Bachelor's Degree in Computer Science and Engineering",
       startYear: "",
-      endYear: "2010-04-01"
+      endYear: "2010-04-01",
     },
   ],
   workExperience: [
     {
-      company: "Silver Creek Insights, Dubai",
-      position: "Applied AI Research Scientist",
-      description: "AI Infrastructure & Model Deployment Project: Micro-SaaS platform providing image and video manipulation services through optimized AI model inference APIs",
-      keyAchievements: "Developed full stack web applications using Python APIs for AI model inference services, serving multiple client applications with optimized performance.\nImplemented automated testing pipelines including unit tests and security testing using GitHub Actions for continuous integration and deployment.\nManaged Git branching strategies and conducted peer code reviews through pull requests, maintaining code quality standards across development team.\nCollaborated in Agile environment using Jira for sprint planning, task tracking, and delivery coordination with cross-functional teams.\nParticipated in pair programming sessions for knowledge sharing and collaborative problem-solving on complex technical challenges.\nEstablished CI/CD workflows using GitHub Actions for automated testing, security scanning, and deployment processes.",
-      startYear: "2024-08-01",
-      endYear: "Present"
-    },
-    {
-      company: "Homewood Health Inc, Guelph",
+      company: "Silver Creek Insights Inc.",
       position: "Principal Software Engineer",
-      description: "Homeweb.ca Project: EFAP portal using NextJS frontend and Node.js backend.",
-      keyAchievements: "Lead migration of frontend from AngularJS to ReactJS as the former has reached EOL\nAssessed the migration project and broken down it into executable units for external contractors\nImplemented and maintained Application Lifecycle using Jira and Bitbucket\nBuilt SSO Trust with a number of IdPs and SPs with SAML2\nIntegrated OAuth2.0/OpenID Connect Authentication with Microsoft Identity.NET server\nImplemented Bearer-Token based RESTful API for 3rd party Integration in Java (Spring Boot)\nMigrated internally hosted MongoDB to MongoDB Atlas Cluster\nHorizontally scaled and implemented failover for resilience and high availability\nSetup continuous integration using Git, Bitbucket, Jira, PM2, Shell and Bash scripts",
+      description:
+        "Aloshy.ai: B2B AI-as-a-Service APIs for media manipulation—resizing, enhancement, style transfer, object removal, and format conversion.",
+      keyAchievements:
+        "Architected scalable, modular GenAI inference infrastructure using Kubernetes, supporting multiple diffusion and LLM models across production environments.\nContinuously optimized generative AI workflows through model evaluation and pipeline refinement, improving output quality, performance, and cost efficiency.\nSet up centralized Model Control Protocol (MCP) gateway and aggregator, serving secure internal and curated third-party AI model endpoints.",
+      startYear: "2024-08-01",
+      endYear: "Present",
+    },
+    {
+      company: "Homewood Health Inc.",
+      position: "Senior Software Engineer",
+      description:
+        "Homeweb.ca: Canada's leading digital mental health provider, delivering EFAP and CBT solutions to hundreds of thousands of employees nationwide.",
+      keyAchievements:
+        "Inherited and revitalized an abandoned, undocumented MEAN stack application, transforming it into a maintainable, production-ready web platform.\nRebuilt authentication system implementing OAuth 2.0 PKCE flow for SSO integration with Microsoft Identity Platform.\nCollaborated with federated vendors to configure and troubleshoot SAML 2.0 authentication, enabling seamless user login across partner organizations.\nLed complete frontend migration from AngularJS to Next.js upon framework EOL, preserving existing UI/UX and API compatibility.\nEstablished comprehensive DevOps practices including automated testing, CI/CD pipelines, containerization, monitoring, and backup systems.\nIntroduced development standards encompassing coding conventions, linting, code reviews, documentation, and incident management processes.",
       startYear: "2017-10-01",
-      endYear: "2024-07-01"
+      endYear: "2024-07-01",
     },
     {
-      company: "Scotiabank, Toronto",
-      position: "IT Consultant",
-      description: "Risk Analysis and Management Project: IBM OpenPages migration tasks",
-      keyAchievements: "Developed business unit hierarchy user interface using Angular and integrated with existing backend REST API.\nUpgraded IBM OpenPages GRC Environments version from 7.3 to 8.0.0.2, and Cognos 10 BI Environments to Cognos Analytics 11\nSetup IBM AIX Load Balanced Cluster using IBMIHS9\nPrepared Bash scripts to automate Upgrade process\nImplemented Business Unit Hierarchy user interface on Angular 6 and Email Notification Prototype using OpenPages Java Library",
-      startYear: "2019-02-01",
-      endYear: "2019-06-01"
-    },
-    {
-      company: "Etuper Technologies Pvt. Ltd, India",
-      position: "Development Lead",
-      description: "Brilliant Rewards Project: Gamified Hospitality Apps suit using Angular frontend and IBM Loopback backend",
-      keyAchievements: "Coordinated with cross-functional teams using Agile methodologies and project tracking tools for requirement gathering.\nDesigned database schemas and implemented data flow architecture with MySQL for optimal performance.\nLed development of RESTful web service APIs using IBM Loopback framework in strict compliance with OpenAPI (Swagger) specifications.\nMaintained Git workflows and code review processes for seamless team collaboration and code quality.",
+      company: "Etuper Technologies Pvt. Ltd.",
+      position: "Lead Software Engineer",
+      description:
+        "Brilliant Rewards: Complete hospitality software suite—dashboard, mobile and web apps—featuring loyalty programs, marketing automation, booking integration, and analytics.",
+      keyAchievements:
+        "Collaborated with stakeholders to gather requirements, create user stories, design wireframes, and develop functional prototypes.\nManaged sprint planning, daily standups, backlog prioritization, and blocker resolution to ensure continuous delivery.\nDesigned normalized database schemas, optimized SQL queries and indexing strategies, and implemented stored procedures with comprehensive test coverage.\nLed development of scalable microservices architecture with containerized, discoverable APIs following OpenAPI specifications.\nDelivered multiple client applications including AngularJS web platforms and cross-platform mobile solutions.",
       startYear: "2016-04-01",
-      endYear: "2017-08-01"
+      endYear: "2017-08-01",
     },
     {
-      company: "RM plc. India",
+      company: "RM plc.",
       position: "Software Engineer",
-      description: "RM Integris Project: School MIS System using Spring Boot framework and MS SQL Database",
-      keyAchievements: "Implemented exam management and reporting modules with database integration using MS SQL.\nBuilt integration platform for secure communication between JSON clients and SOAP/XML web service APIs.\nParticipated in peer code reviews and provided mentorship for new team members in collaborative development environment.\nManaged Linux cluster environments for testing, staging, and production deployments.",
+      description:
+        "RM Integris: School MIS system featuring student management, grade tracking, attendance monitoring, parent portals, and performance analytics.",
+      keyAchievements:
+        "Implemented OpenAPI/Swagger bridging layer to modernize legacy SOAP APIs for RESTful client consumption.\nPrototyped AngularJS interface to decouple presentation layer from legacy Struts JSP architecture.\nMaintained load-balanced Linux VM clusters hosting distributed web, application, and database tiers.\nMentored interns and onboarded new team members through technical guidance and knowledge transfer.",
       startYear: "2011-06-01",
-      endYear: "2016-03-01"
+      endYear: "2016-03-01",
     },
     {
-      company: "POSibolt Solutions Pvt Ltd. India",
-      position: "Software Engineer",
-      description: "POSibolt Project: ERP Software using Struts framework and PostgreSQL database.",
-      keyAchievements: "Implemented automated testing using Selenium WebDriver for browser compatibility and functionality validation.\nImplemented responsive frontend designs in GWT ensuring cross-browser compatibility and optimal user experience.\nParticipated in technical documentation and collaborated with cross-functional teams for product development.",
+      company: "Posibolt Solutions Pvt. Ltd.",
+      position: "Junior Software Engineer",
+      description:
+        "Posibolt: Adaptable cloud ERP solution serving key retail businesses across global industry segments.",
+      keyAchievements:
+        "Created UI mockups based on SRS specifications and converted approved designs into responsive HTML/CSS templates.\nDeveloped integration test cases and implemented browser automation using Selenium WebDriver.\nAuthored user documentation including help articles, user guides, FAQs, and product website content.",
       startYear: "2010-07-01",
-      endYear: "2011-01-01"
-    }
+      endYear: "2011-01-01",
+    },
   ],
   projects: [],
   skills: [
     {
       title: "AI/ML Stack",
       skills: [
-        "RAG Systems", "Multi-Agent LLM Workflows", "Generative AI Pipelines", "Hugging Face Transformers", "Knowledge Graphs", "NER Models", "MCP Server Gateways", "Google Vertex AI", "Claude Code", "Gemini CLI", "Cursor"
-      ]
+        "RAG Systems",
+        "Multi-Agent LLM Workflows",
+        "Generative AI Pipelines",
+        "Hugging Face Transformers",
+        "Knowledge Graphs",
+        "NER Models",
+        "MCP Server Gateways",
+        "Google Vertex AI",
+        "Claude Code",
+        "Gemini CLI",
+        "Cursor",
+      ],
     },
     {
       title: "Cloud Services",
       skills: [
-        "Google Cloud (Vertex AI, GKE)", "AWS (Lambda, S3, EC2)", "DigitalOcean", "Vercel", "Cloudflare Workers/R2", "MongoDB Atlas"
-      ]
+        "Google Cloud (Vertex AI, GKE)",
+        "AWS (Lambda, S3, EC2)",
+        "DigitalOcean",
+        "Vercel",
+        "Cloudflare Workers/R2",
+        "MongoDB Atlas",
+      ],
     },
     {
       title: "Authentication & Security",
       skills: [
-        "OAuth 2.0", "OpenID Connect (OIDC)", "SAML 2.0", "PKCE", "JWT", "Auth0", "Keycloak", "Basic Auth", "Bearer Token"
-      ]
+        "OAuth 2.0",
+        "OpenID Connect (OIDC)",
+        "SAML 2.0",
+        "PKCE",
+        "JWT",
+        "Auth0",
+        "Keycloak",
+        "Basic Auth",
+        "Bearer Token",
+      ],
     },
     {
       title: "DevOps & CI/CD",
       skills: [
-        "Docker", "Docker Compose", "Kubernetes", "GitHub Actions", "Terraform", "GitLab CI", "Ansible", "Vagrant", "Act"
-      ]
+        "Docker",
+        "Docker Compose",
+        "Kubernetes",
+        "GitHub Actions",
+        "Terraform",
+        "GitLab CI",
+        "Ansible",
+        "Vagrant",
+        "Act",
+      ],
     },
     {
       title: "Backend & APIs",
       skills: [
-        "Node.js", "Express", "RESTful APIs", "GraphQL", "Microservices", "SOAP/XML", "Swagger/OpenAPI"
-      ]
+        "Node.js",
+        "Express",
+        "RESTful APIs",
+        "GraphQL",
+        "Microservices",
+        "SOAP/XML",
+        "Swagger/OpenAPI",
+      ],
     },
     {
       title: "Programming / Scripting",
-      skills: [
-        "JavaScript", "TypeScript", "Python", "Bash"
-      ]
+      skills: ["JavaScript", "TypeScript", "Python", "Bash"],
     },
     {
       title: "Databases",
       skills: [
-        "Supabase", "PostgreSQL", "MongoDB", "MySQL", "MS SQL", "Redis", "Neo4j", "Qdrant", "Chroma"
-      ]
+        "Supabase",
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "MS SQL",
+        "Redis",
+        "Neo4j",
+        "Qdrant",
+        "Chroma",
+      ],
     },
     {
       title: "Protocols",
-      skills: [
-        "WebSocket", "WebRTC", "Server-Sent Events", "HTTP/HTTPS"
-      ]
+      skills: ["WebSocket", "WebRTC", "Server-Sent Events", "HTTP/HTTPS"],
     },
     {
       title: "Web & Mobile UI",
       skills: [
-        "Next.js", "ReactJS", "Angular", "TailwindCSS", "React Native", "Flutter", "Expo"
-      ]
-    }
+        "Next.js",
+        "ReactJS",
+        "Angular",
+        "TailwindCSS",
+        "React Native",
+        "Flutter",
+        "Expo",
+      ],
+    },
   ],
-  languages: [
-    "English",
-    "Hindi",
-    "Malayalam",
-  ],
+  languages: ["English", "Hindi", "Malayalam"],
   certifications: [],
 };
 
