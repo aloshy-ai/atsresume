@@ -1,7 +1,7 @@
 const DefaultResumeData = {
   name: "ISMAIL KATTAKATH",
   position: "Full Stack Software Engineer",
-  contactInformation: "+1 (647) 225-2878",
+  contactInformation: "+16472252878",
   email: "ismail@kattakath.com",
   address: "242 John Garland Blvd, Etobicoke, ON M9V 1N8",
   profilePicture: "",
@@ -32,6 +32,7 @@ const DefaultResumeData = {
   workExperience: [
     {
       company: "Silver Creek Insights Inc.",
+      url: "silvercreek.ai",
       position: "Principal Software Engineer",
       description:
         "Aloshy.ai: B2B AI-as-a-Service APIs for media manipulation—resizing, enhancement, style transfer, object removal, and format conversion.",
@@ -42,6 +43,7 @@ const DefaultResumeData = {
     },
     {
       company: "Homewood Health Inc.",
+      url: "homewoodhealth.com",
       position: "Senior Software Engineer",
       description:
         "Homeweb.ca: Canada's leading digital mental health provider, delivering EFAP and CBT solutions to hundreds of thousands of employees nationwide.",
@@ -52,6 +54,7 @@ const DefaultResumeData = {
     },
     {
       company: "Etuper Technologies Pvt. Ltd.",
+      url: "facebook.com/com.etuper",
       position: "Lead Software Engineer",
       description:
         "Brilliant Rewards: Complete hospitality software suite—dashboard, mobile and web apps—featuring loyalty programs, marketing automation, booking integration, and analytics.",
@@ -62,6 +65,7 @@ const DefaultResumeData = {
     },
     {
       company: "RM plc.",
+      url: "rmplc.com",
       position: "Software Engineer",
       description:
         "RM Integris: School MIS system featuring student management, grade tracking, attendance monitoring, parent portals, and performance analytics.",
@@ -72,6 +76,7 @@ const DefaultResumeData = {
     },
     {
       company: "Posibolt Solutions Pvt. Ltd.",
+      url: "posibolt.com",
       position: "Junior Software Engineer",
       description:
         "Posibolt: Adaptable cloud ERP solution serving key retail businesses across global industry segments.",

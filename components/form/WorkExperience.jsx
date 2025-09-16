@@ -10,7 +10,17 @@ const WorkExperience = () => {
 
   const handleWorkExperience = (e, index) => {
     const newworkExperience = [...resumeData.workExperience];
-    newworkExperience[index][e.target.name] = e.target.value;
+    
+    // Handle URL field formatting - remove protocols like social media does
+    if (e.target.name === 'url') {
+      newworkExperience[index][e.target.name] = e.target.value.replace(
+        /^https?:\/\//,
+        ""
+      );
+    } else {
+      newworkExperience[index][e.target.name] = e.target.value;
+    }
+    
     setResumeData({ ...resumeData, workExperience: newworkExperience });
   };
 
@@ -21,6 +31,7 @@ const WorkExperience = () => {
         ...resumeData.workExperience,
         {
           company: "",
+          url: "",
           position: "",
           description: "",
           keyAchievements: "",
@@ -49,6 +60,14 @@ const WorkExperience = () => {
             name="company"
             className="w-full other-input"
             value={workExperience.company}
+            onChange={(e) => handleWorkExperience(e, index)}
+          />
+          <input
+            type="url"
+            placeholder="Company URL"
+            name="url"
+            className="w-full other-input"
+            value={workExperience.url}
             onChange={(e) => handleWorkExperience(e, index)}
           />
           <input

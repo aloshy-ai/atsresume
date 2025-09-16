@@ -7,12 +7,14 @@ import {
   FaInstagram,
   FaYoutube, FaBold, FaItalic, FaPlus, FaMinus, FaAlignLeft , FaAlignCenter, FaAlignRight,
   FaUnderline,
+  FaGlobe,
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
 import Skills from "./Skills";
 import DateRange from "../utility/DateRange";
 import ContactInfo from "./ContactInfo";
+import { formatUrl } from "../utility/formatUrl";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
@@ -20,7 +22,6 @@ import { ResumeContext } from "../../pages/builder";
 import dynamic from "next/dynamic";
 import Language from "./Language";
 import Certification from "./Certification";
-import { HighlightMenu } from "react-highlight-menu";
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 const DragDropContext = dynamic(
@@ -44,6 +45,13 @@ const Draggable = dynamic(
     }),
   { ssr: false }
 );
+const HighlightMenu = dynamic(
+  () =>
+    import("react-highlight-menu").then((mod) => {
+      return mod.HighlightMenu;
+    }),
+  { ssr: false }
+);
 
 const Preview = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -55,7 +63,7 @@ const Preview = () => {
     { name: "facebook", icon: <FaFacebook /> },
     { name: "instagram", icon: <FaInstagram /> },
     { name: "youtube", icon: <FaYoutube /> },
-    { name: "website", icon: <CgWebsite /> },
+    { name: "website", icon: <FaGlobe /> },
   ];
 
   const onDragEnd = (result) => {
@@ -226,13 +234,13 @@ const Preview = () => {
               {resumeData.socialMedia.map((socialMedia, index) => {
                 return (
                   <a
-                    href={`http://${socialMedia.link}`}
+                    href={formatUrl(socialMedia.link)}
                     aria-label={socialMedia.socialMedia}
                     key={index}
                     title={socialMedia.socialMedia}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 social-media align-center justify-center "
+                    className="inline-flex items-center gap-1 social-media align-center justify-center text-blue-600 hover:underline"
                     // Prevent text overflowing, If the socialMedia.link string is longer than 32 characters, apply the wordWrap and display styles to this <a> tag.
                     // wordWrap: "break-word" breaks the text onto the next line if it's too long,
                     // display: "inline-block" is necessary for wordWrap to work on an inline element like <a>.
@@ -345,14 +353,21 @@ const Preview = () => {
                               }`}
                             >
                               <div className="flex flex-row justify-between space-y-1">
-                                <p className="content i-bold">{item.company}</p>
+                                <a
+                                  href={item.url ? formatUrl(item.url) : '#'}
+                                  target={item.url ? "_blank" : "_self"}
+                                  rel={item.url ? "noreferrer" : undefined}
+                                  className="content i-bold text-blue-600 hover:underline"
+                                >
+                                  {item.company}
+                                </a>
                                 <DateRange
                                   startYear={item.startYear}
                                   endYear={item.endYear}
                                   id={`work-experience-start-end-date`}
                                 />
                               </div>
-                              <p className="content">{item.position}</p>
+                              <p className="content i-bold">{item.position}</p>
                               <p className="content hyphens-auto">
                                 {item.description}
                               </p>
