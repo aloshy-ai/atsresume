@@ -23,7 +23,7 @@ const DefaultResumeData = {
     "Principal Software Engineer with 15+ years of experience in full-stack web development across modern JavaScript ecosystems, specializing in SSO/federated authentication systems, CI/CD pipelines, and cloud-native distributed architectures. Currently architecting and optimizing production-ready AI inference and RAG systems, centralized MCP Gateways, multi-agent LLM workflows, and scalable generative pipelines.",
   education: [
     {
-      school: "Mahatma Gandhi University, India",
+      school: "Mahatma Gandhi University",
       degree: "Bachelor's Degree in Computer Science and Engineering",
       startYear: "",
       endYear: "2010-04-01",
