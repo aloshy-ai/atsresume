@@ -5,6 +5,7 @@ const DefaultResumeData = {
   email: "ismail@kattakath.com",
   address: "242 John Garland Blvd, Etobicoke, ON M9V 1N8",
   profilePicture: "",
+  showEducationDates: true,
   socialMedia: [
     {
       socialMedia: "Website",
@@ -24,8 +25,9 @@ const DefaultResumeData = {
   education: [
     {
       school: "Mahatma Gandhi University",
+      url: "mgu.ac.in",
       degree: "Bachelor's Degree in Computer Science and Engineering",
-      startYear: "",
+      startYear: "2006-07-01",
       endYear: "2010-04-01",
     },
   ],
@@ -190,7 +192,8 @@ const DefaultResumeData = {
       ],
     },
   ],
-  languages: ["English", "Hindi", "Malayalam"],
+  languages: ["English"],
+  showLanguages: true,
   certifications: [],
 };
 

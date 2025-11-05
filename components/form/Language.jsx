@@ -22,7 +22,11 @@ const Language = () => {
     const newSkills = [...resumeData[skillType]];
     newSkills.splice(-1, 1);
     setResumeData({ ...resumeData, [skillType]: newSkills });
-  };  
+  };
+
+  const handleToggleLanguages = (e) => {
+    setResumeData({ ...resumeData, showLanguages: e.target.checked });
+  };
 
   return (
     <div className="flex-col-gap-2">
@@ -39,6 +43,18 @@ const Language = () => {
           />
         </div>
       ))}
+      <div className="flex items-center gap-2 mt-2 mb-2">
+        <input
+          type="checkbox"
+          id="showLanguages"
+          checked={resumeData.showLanguages}
+          onChange={handleToggleLanguages}
+          className="w-4 h-4 text-fuchsia-600 bg-gray-100 border-gray-300 rounded focus:ring-fuchsia-500"
+        />
+        <label htmlFor="showLanguages" className="text-sm text-white cursor-pointer">
+          Display Languages Section
+        </label>
+      </div>
       <FormButton size={resumeData[skillType].length} add={addSkill} remove={removeSkill} />
     </div>
   );

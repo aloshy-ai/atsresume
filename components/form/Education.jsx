@@ -7,8 +7,22 @@ const Education = () => {
 
     const handleEducation = (e, index) => {
       const newEducation = [...resumeData.education];
-      newEducation[index][e.target.name] = e.target.value;
+
+      // Handle URL field formatting - remove protocols like work experience does
+      if (e.target.name === 'url') {
+        newEducation[index][e.target.name] = e.target.value.replace(
+          /^https?:\/\//,
+          ""
+        );
+      } else {
+        newEducation[index][e.target.name] = e.target.value;
+      }
+
       setResumeData({ ...resumeData, education: newEducation });
+    };
+
+    const handleToggleEducationDates = (e) => {
+      setResumeData({ ...resumeData, showEducationDates: e.target.checked });
     };
   
     const addEducation = () => {
@@ -16,7 +30,7 @@ const Education = () => {
         ...resumeData,
         education: [
           ...resumeData.education,
-          { school: "", degree: "", startYear: "", endYear: "" },
+          { school: "", url: "", degree: "", startYear: "", endYear: "" },
         ],
       });
     };
@@ -39,6 +53,13 @@ const Education = () => {
               name="school"
               className="w-full other-input"
               value={education.school}
+              onChange={(e) => handleEducation(e, index)} />
+            <input
+              type="url"
+              placeholder="School URL (optional)"
+              name="url"
+              className="w-full other-input"
+              value={education.url}
               onChange={(e) => handleEducation(e, index)} />
             <input
               type="text"
@@ -65,6 +86,18 @@ const Education = () => {
             </div>
           </div>
         ))}
+        <div className="flex items-center gap-2 mt-2 mb-2">
+          <input
+            type="checkbox"
+            id="showEducationDates"
+            checked={resumeData.showEducationDates}
+            onChange={handleToggleEducationDates}
+            className="w-4 h-4 text-fuchsia-600 bg-gray-100 border-gray-300 rounded focus:ring-fuchsia-500"
+          />
+          <label htmlFor="showEducationDates" className="text-sm text-white cursor-pointer">
+            Display Graduation Date
+          </label>
+        </div>
         <FormButton size={resumeData.education.length} add={addEducation} remove={removeEducation} />
       </div>
     )

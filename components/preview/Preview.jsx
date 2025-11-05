@@ -278,12 +278,26 @@ const Preview = () => {
                     {resumeData.education.map((item, index) => (
                       <div key={index} className="mb-1">
                         <p className="content i-bold">{item.degree}</p>
-                        <p className="content">{item.school}</p>
-                        <DateRange
-                          startYear={item.startYear}
-                          endYear={item.endYear}
-                          id={`education-start-end-date`}
-                        />
+                        {item.url ? (
+                          <a
+                            href={formatUrl(item.url)}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="content text-blue-600 hover:underline"
+                          >
+                            {item.school}
+                          </a>
+                        ) : (
+                          <p className="content">{item.school}</p>
+                        )}
+                        {resumeData.showEducationDates && (
+                          <DateRange
+                            startYear={item.startYear}
+                            endYear={item.endYear}
+                            id={`education-start-end-date-${index}`}
+                            showOnlyEndDate={true}
+                          />
+                        )}
                       </div>
                     ))}
                   </div>
@@ -317,7 +331,9 @@ const Preview = () => {
                   </div>
                 )}
               </Droppable>
-              <Language title="Languages" languages={resumeData.languages} />
+              {resumeData.showLanguages && (
+                <Language title="Languages" languages={resumeData.languages} />
+              )}
               <Certification
                 title="Certifications"
                 certifications={resumeData.certifications}
