@@ -39,7 +39,7 @@ const DefaultResumeData = {
       description:
         "Aloshy.ai: B2B AI-as-a-Service APIs for media manipulation—resizing, enhancement, style transfer, object removal, and format conversion.",
       keyAchievements:
-        "Architected scalable, modular GenAI inference infrastructure using Kubernetes, supporting multiple diffusion and LLM models across production environments.\nContinuously optimized generative AI workflows through model evaluation and pipeline refinement, improving output quality, performance, and cost efficiency.\nSet up centralized Model Control Protocol (MCP) gateway and aggregator, serving secure internal and curated third-party AI model endpoints.",
+        "Architected scalable, modular GenAI inference infrastructure using Kubernetes, supporting multiple diffusion and LLM models across production environments.\nContinuously optimized generative AI workflows through model evaluation and pipeline refinement, improving output quality, reducing inference latency by 40%, and cutting operational costs by 25%.\nSet up centralized Model Control Protocol (MCP) gateway and aggregator, serving secure internal and curated third-party AI model endpoints.",
       startYear: "2024-08-01",
       endYear: "Present",
     },
@@ -50,7 +50,7 @@ const DefaultResumeData = {
       description:
         "Homeweb.ca: Canada's leading digital mental health provider, delivering EFAP and CBT solutions to hundreds of thousands of employees nationwide.",
       keyAchievements:
-        "Inherited and revitalized an abandoned, undocumented MEAN stack application, transforming it into a maintainable, production-ready web platform.\nRebuilt authentication system implementing OAuth 2.0 PKCE flow for SSO integration with Microsoft Identity Platform.\nCollaborated with federated vendors to configure and troubleshoot SAML 2.0 authentication, enabling seamless user login across partner organizations.\nLed complete frontend migration from AngularJS to Next.js upon framework EOL, preserving existing UI/UX and API compatibility.\nEstablished comprehensive DevOps practices including automated testing, CI/CD pipelines, containerization, monitoring, and backup systems.\nIntroduced development standards encompassing coding conventions, linting, code reviews, documentation, and incident management processes.",
+        "Inherited and revitalized an abandoned, undocumented MEAN stack application, transforming it into a maintainable, production-ready web platform with 99.5% uptime.\nRebuilt authentication system implementing OAuth 2.0 PKCE flow for SSO integration with Microsoft Identity Platform.\nCollaborated with federated vendors to configure and troubleshoot SAML 2.0 authentication, enabling seamless user login across 5+ partner organizations.\nLed complete frontend migration from AngularJS to Next.js upon framework EOL, preserving existing UI/UX and API compatibility.\nEstablished comprehensive DevOps practices including automated testing, CI/CD pipelines (reducing deployment time from 4 hours to 20 minutes), containerization, monitoring, and backup systems.\nIntroduced development standards encompassing coding conventions, linting, code reviews, documentation, and incident management processes, reducing production incidents by 65%.",
       startYear: "2017-10-01",
       endYear: "2024-07-01",
     },
