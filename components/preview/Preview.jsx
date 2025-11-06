@@ -213,7 +213,7 @@ const Preview = () => {
           )}
         />
         <DragDropContext onDragEnd={onDragEnd}>
-          <div className="f-col items-center mb-1">
+          <div className="f-col items-center mb-2 pb-2 border-b-2 border-gray-300 border-dashed">
             {resumeData.profilePicture.length > 0 && (
               <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[black]">
                 <Image
@@ -226,7 +226,7 @@ const Preview = () => {
               </div>
             )}
             <h1 className="name">{resumeData.name}</h1>
-            <p className="profession">{resumeData.position}</p>
+            <h2 className="section-title">{resumeData.position}</h2>
             <ContactInfo
               mainclass="flex flex-row gap-1 mb-1 contact"
               linkclass="inline-flex items-center gap-1"
@@ -247,7 +247,7 @@ const Preview = () => {
                     title={socialMedia.socialMedia}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 social-media align-center justify-center text-blue-700 hover:underline"
+                    className="inline-flex items-center gap-1 content align-center justify-center text-blue-700 hover:underline"
                     // Prevent text overflowing, If the socialMedia.link string is longer than 32 characters, apply the wordWrap and display styles to this <a> tag.
                     // wordWrap: "break-word" breaks the text onto the next line if it's too long,
                     // display: "inline-block" is necessary for wordWrap to work on an inline element like <a>.
@@ -263,13 +263,12 @@ const Preview = () => {
               })}
             </div>
           </div>
-          <hr className="border-dashed my-2" />
           {/* two column start */}
           <div className="grid grid-cols-3 gap-6">
             <div className="col-span-1 space-y-2">
               {resumeData.summary.length > 0 && (
                 <div className="mb-1">
-                  <h2 className="section-title mb-1 border-b-2 border-gray-300">
+                  <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed">
                     Summary
                   </h2>
                   <p className="content break-words">{resumeData.summary}</p>
@@ -278,7 +277,7 @@ const Preview = () => {
               <div>
                 {resumeData.education.length > 0 && (
                   <div className="mb-1">
-                    <h2 className="section-title mb-1 border-b-2 border-gray-300">
+                    <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed">
                       Education
                     </h2>
                     {resumeData.education.map((item, index) => (
@@ -352,7 +351,7 @@ const Preview = () => {
                   {(provided) => (
                     <div {...provided.droppableProps} ref={provided.innerRef}>
                       <h2
-                        className="section-title mb-1 border-b-2 border-gray-300 editable"
+                        className="section-title mb-1 border-b-2 border-gray-300 border-dashed editable"
                         contentEditable
                         suppressContentEditableWarning
                       >

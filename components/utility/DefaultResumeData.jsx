@@ -17,7 +17,7 @@ const DefaultResumeData = {
     },
     {
       socialMedia: "Github",
-      link: "github.com/aloshy-ai",
+      link: "github.com/ismail-kattakath",
     },
   ],
   summary:
