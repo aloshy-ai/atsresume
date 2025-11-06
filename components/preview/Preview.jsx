@@ -225,8 +225,8 @@ const Preview = () => {
                 />
               </div>
             )}
-            <h1 className="name">{resumeData.name}</h1>
-            <h2 className="profession">{resumeData.position}</h2>
+            <h1 className="name editable" contentEditable suppressContentEditableWarning>{resumeData.name}</h1>
+            <h2 className="profession editable" contentEditable suppressContentEditableWarning>{resumeData.position}</h2>
             <ContactInfo
               mainclass="flex flex-row gap-1 mb-1 contact"
               linkclass="inline-flex items-center gap-1"
@@ -268,21 +268,21 @@ const Preview = () => {
             <div className="col-span-1 space-y-2">
               {resumeData.summary.length > 0 && (
                 <div className="mb-1">
-                  <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed">
+                  <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed editable" contentEditable suppressContentEditableWarning>
                     Summary
                   </h2>
-                  <p className="content break-words">{resumeData.summary}</p>
+                  <p className="content break-words editable" contentEditable suppressContentEditableWarning>{resumeData.summary}</p>
                 </div>
               )}
               <div>
                 {resumeData.education.length > 0 && (
                   <div className="mb-1">
-                    <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed">
+                    <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed editable" contentEditable suppressContentEditableWarning>
                       Education
                     </h2>
                     {resumeData.education.map((item, index) => (
                       <div key={index} className="mb-1">
-                        <p className="content i-bold">{item.degree}</p>
+                        <p className="content i-bold editable" contentEditable suppressContentEditableWarning>{item.degree}</p>
                         {item.url ? (
                           <a
                             href={formatUrl(item.url)}
@@ -378,7 +378,9 @@ const Preview = () => {
                                   href={item.url ? formatUrl(item.url) : "#"}
                                   target={item.url ? "_blank" : "_self"}
                                   rel={item.url ? "noreferrer" : undefined}
-                                  className="content i-bold text-blue-700 hover:underline"
+                                  className="content i-bold text-blue-700 hover:underline editable"
+                                  contentEditable
+                                  suppressContentEditableWarning
                                 >
                                   {item.company}
                                 </a>
@@ -388,8 +390,8 @@ const Preview = () => {
                                   id={`work-experience-start-end-date`}
                                 />
                               </div>
-                              <p className="content i-bold">{item.position}</p>
-                              <p className="content hyphens-auto">
+                              <p className="content i-bold editable" contentEditable suppressContentEditableWarning>{item.position}</p>
+                              <p className="content hyphens-auto editable" contentEditable suppressContentEditableWarning>
                                 {item.description}
                               </p>
                               <Droppable
