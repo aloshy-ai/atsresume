@@ -226,7 +226,7 @@ const Preview = () => {
               </div>
             )}
             <h1 className="name">{resumeData.name}</h1>
-            <h2 className="section-title">{resumeData.position}</h2>
+            <h2 className="profession">{resumeData.position}</h2>
             <ContactInfo
               mainclass="flex flex-row gap-1 mb-1 contact"
               linkclass="inline-flex items-center gap-1"
