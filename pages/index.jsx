@@ -1,5 +1,5 @@
 import React, {  } from "react";
-import Builder from "./builder";
+import Builder from "@/pages/builder";
 
 const ResumeBuilder = () => {
   return (

@@ -1,23 +1,23 @@
 import React, { useState, createContext, useContext } from "react";
-import Language from "../components/form/Language";
-import Meta from "../components/meta/Meta";
-import FormCP from "../components/form/FormCP";
-import LoadUnload from "../components/form/LoadUnload";
-import Preview from "../components/preview/Preview";
-import DefaultResumeData from "../components/utility/DefaultResumeData";
-import SocialMedia from "../components/form/SocialMedia";
-import WorkExperience from "../components/form/WorkExperience";
-import Skill from "../components/form/Skill";
-import PersonalInformation from "../components/form/PersonalInformation";
-import Summary from "../components/form/Summary";
-import Education from "../components/form/Education";
+import Language from "@/components/form/Language";
+import Meta from "@/components/meta/Meta";
+import FormCP from "@/components/form/FormCP";
+import LoadUnload from "@/components/form/LoadUnload";
+import Preview from "@/components/preview/Preview";
+import DefaultResumeData from "@/components/utility/DefaultResumeData";
+import SocialMedia from "@/components/form/SocialMedia";
+import WorkExperience from "@/components/form/WorkExperience";
+import Skill from "@/components/form/Skill";
+import PersonalInformation from "@/components/form/PersonalInformation";
+import Summary from "@/components/form/Summary";
+import Education from "@/components/form/Education";
 import dynamic from "next/dynamic";
-import Certification from "../components/form/certification";
+import Certification from "@/components/form/certification";
 
 const ResumeContext = createContext(DefaultResumeData);
 
 // server side rendering false
-const Print = dynamic(() => import("../components/utility/WinPrint"), {
+const Print = dynamic(() => import("@/components/utility/WinPrint"), {
   ssr: false,
 });
 

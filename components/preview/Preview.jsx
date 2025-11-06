@@ -18,18 +18,18 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
-import Skills from "./Skills";
-import DateRange from "../utility/DateRange";
-import ContactInfo from "./ContactInfo";
-import { formatUrl } from "../utility/formatUrl";
+import Skills from "@/components/preview/Skills";
+import DateRange from "@/components/utility/DateRange";
+import ContactInfo from "@/components/preview/ContactInfo";
+import { formatUrl } from "@/components/utility/formatUrl";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import { ResumeContext } from "../../pages/builder";
+import { ResumeContext } from "@/pages/builder";
 import dynamic from "next/dynamic";
-import Language from "./Language";
-import Certification from "./Certification";
-import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import Language from "@/components/preview/Language";
+import Certification from "@/components/preview/Certification";
+import useKeyboardShortcut from "@/hooks/useKeyboardShortcut";
 
 const DragDropContext = dynamic(
   () =>
