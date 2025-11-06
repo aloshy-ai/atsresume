@@ -5,7 +5,14 @@ import {
   FaTwitter,
   FaFacebook,
   FaInstagram,
-  FaYoutube, FaBold, FaItalic, FaPlus, FaMinus, FaAlignLeft , FaAlignCenter, FaAlignRight,
+  FaYoutube,
+  FaBold,
+  FaItalic,
+  FaPlus,
+  FaMinus,
+  FaAlignLeft,
+  FaAlignCenter,
+  FaAlignRight,
   FaUnderline,
   FaGlobe,
 } from "react-icons/fa";
@@ -123,8 +130,8 @@ const Preview = () => {
   };
 
   const MenuButton = ({ title, icon, onClick }) => (
-    <button 
-      onClick={onClick} 
+    <button
+      onClick={onClick}
       title={title}
       className="p-2 hover:bg-gray-200 rounded font-semibold"
     >
@@ -135,16 +142,16 @@ const Preview = () => {
   const formatText = (command, value = null) => {
     document.execCommand(command, false, value);
   };
-  
-  const toggleBold = () => formatText('bold');
-  const toggleItalic = () => formatText('italic');
-  const toggleUnderline = () => formatText('underline');
-  const changeFontSize = (size) => formatText('fontSize', size);
+
+  const toggleBold = () => formatText("bold");
+  const toggleItalic = () => formatText("italic");
+  const toggleUnderline = () => formatText("underline");
+  const changeFontSize = (size) => formatText("fontSize", size);
   const alignText = (alignment) => formatText(`justify${alignment}`);
 
-  useKeyboardShortcut('b', true, toggleBold);
-  useKeyboardShortcut('i', true, toggleItalic);
-  useKeyboardShortcut('u', true, toggleUnderline);
+  useKeyboardShortcut("b", true, toggleBold);
+  useKeyboardShortcut("i", true, toggleItalic);
+  useKeyboardShortcut("u", true, toggleUnderline);
 
   return (
     <div className="md:max-w-[60%] sticky top-0 preview rm-padding-print p-6 md:overflow-y-scroll md:h-screen">
@@ -162,53 +169,53 @@ const Preview = () => {
           menu={() => (
             <>
               <MenuButton
-        title="Bold (Ctrl+B)"
-        icon={<FaBold />}
-        onClick={toggleBold}
-      />
-      <MenuButton 
-        title="Italic (Ctrl+I)"
-        icon={<FaItalic />}
-        onClick={toggleItalic}
-      />
-      <MenuButton
-        title="Underline (Ctrl+U)"
-        icon={<FaUnderline />}
-        onClick={toggleUnderline}
-      />
-      <MenuButton
-        title="Increase Font Size"
-        icon={<FaPlus/>}
-        onClick={() => changeFontSize(4)} 
-      />
-      <MenuButton
-        title="Decrease Font Size"
-        icon={<FaMinus/>}
-        onClick={() => changeFontSize(2)} 
-      />
+                title="Bold (Ctrl+B)"
+                icon={<FaBold />}
+                onClick={toggleBold}
+              />
+              <MenuButton
+                title="Italic (Ctrl+I)"
+                icon={<FaItalic />}
+                onClick={toggleItalic}
+              />
+              <MenuButton
+                title="Underline (Ctrl+U)"
+                icon={<FaUnderline />}
+                onClick={toggleUnderline}
+              />
+              <MenuButton
+                title="Increase Font Size"
+                icon={<FaPlus />}
+                onClick={() => changeFontSize(4)}
+              />
+              <MenuButton
+                title="Decrease Font Size"
+                icon={<FaMinus />}
+                onClick={() => changeFontSize(2)}
+              />
 
-      <MenuButton
-        title="Align Left"
-        icon={<FaAlignLeft/>}
-        onClick={() => alignText('Left')}
-      />
-      <MenuButton
-        title="Align Center"
-        icon={<FaAlignCenter/>}
-        onClick={() => alignText('Center')}
-      />
-      <MenuButton
-        title="Align Right"
-        icon={<FaAlignRight/>}
-        onClick={() => alignText('Right')}
-      />
+              <MenuButton
+                title="Align Left"
+                icon={<FaAlignLeft />}
+                onClick={() => alignText("Left")}
+              />
+              <MenuButton
+                title="Align Center"
+                icon={<FaAlignCenter />}
+                onClick={() => alignText("Center")}
+              />
+              <MenuButton
+                title="Align Right"
+                icon={<FaAlignRight />}
+                onClick={() => alignText("Right")}
+              />
             </>
           )}
         />
         <DragDropContext onDragEnd={onDragEnd}>
           <div className="f-col items-center mb-1">
             {resumeData.profilePicture.length > 0 && (
-              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-fuchsia-700">
+              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[black]">
                 <Image
                   src={resumeData.profilePicture}
                   alt="profile"
@@ -244,7 +251,6 @@ const Preview = () => {
                     // Prevent text overflowing, If the socialMedia.link string is longer than 32 characters, apply the wordWrap and display styles to this <a> tag.
                     // wordWrap: "break-word" breaks the text onto the next line if it's too long,
                     // display: "inline-block" is necessary for wordWrap to work on an inline element like <a>.
-                    
                   >
                     {icons.map((icon, index) => {
                       if (icon.name === socialMedia.socialMedia.toLowerCase()) {
@@ -339,7 +345,7 @@ const Preview = () => {
                 certifications={resumeData.certifications}
               />
             </div>
-            
+
             <div className="col-span-2 space-y-2">
               {resumeData.workExperience.length > 0 && (
                 <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
@@ -370,7 +376,7 @@ const Preview = () => {
                             >
                               <div className="flex flex-row justify-between space-y-1">
                                 <a
-                                  href={item.url ? formatUrl(item.url) : '#'}
+                                  href={item.url ? formatUrl(item.url) : "#"}
                                   target={item.url ? "_blank" : "_self"}
                                   rel={item.url ? "noreferrer" : undefined}
                                   className="content i-bold text-blue-600 hover:underline"
@@ -441,109 +447,7 @@ const Preview = () => {
                   )}
                 </Droppable>
               )}
-              {resumeData.projects.length > 0 && (
-                <Droppable droppableId="projects" type="PROJECTS">
-                  {(provided) => (
-                    <div {...provided.droppableProps} ref={provided.innerRef}>
-                      <h2
-                        className="section-title mb-1 border-b-2 border-gray-300 editable"
-                        contentEditable
-                        suppressContentEditableWarning
-                      >
-                        Projects
-                      </h2>
-                      {resumeData.projects.map((item, index) => (
-                        <Draggable
-                          key={`${item.name}-${index}`}
-                          draggableId={`PROJECTS-${index}`}
-                          index={index}
-                        >
-                          {(provided, snapshot) => (
-                            <div
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              className={`mb-1 ${
-                                snapshot.isDragging &&
-                                "outline-dashed outline-2 outline-gray-400 bg-white"
-                              }`}
-                            >
-                              <div className="flex flex-row justify-between space-y-1">
-                                <p className="content i-bold">{item.name}</p>
-                                <DateRange
-                                  startYear={item.startYear}
-                                  endYear={item.endYear}
-                                  id={`work-experience-start-end-date`}
-                                />
-                              </div>
-                             
-                              <Link
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="content"
-                              >
-                                {item.link}
-                              </Link>
-                              <p className="content">{item.description}</p>
-                              <Droppable
-                                droppableId={`PROJECTS_KEY_ACHIEVEMENT-${index}`}
-                                type="PROJECTS_KEY_ACHIEVEMENT"
-                              >
-                                {(provided) => (
-                                  <ul
-                                    className="list-disc ul-padding content"
-                                    {...provided.droppableProps}
-                                    ref={provided.innerRef}
-                                  >
-                                    {typeof item.keyAchievements === "string" &&
-                                      item.keyAchievements
-                                        .split("\n")
-                                        .map((achievement, subIndex) => (
-                                          <Draggable
-                                            key={`${item.name}-${index}-${subIndex}`}
-                                            draggableId={`PROJECTS_KEY_ACHIEVEMENT-${index}-${subIndex}`}
-                                            index={subIndex}
-                                          >
-                                            {(provided, snapshot) => (
-                                              <li
-                                                ref={provided.innerRef}
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                                className={`
-                                          hover:outline-dashed hover:outline-2 hover:outline-gray-400
-                                          ${
-                                            snapshot.isDragging &&
-                                            "outline-dashed outline-2 outline-gray-400 bg-white"
-                                          }`}
-                                              >
-                                                <div
-                                                  dangerouslySetInnerHTML={{
-                                                    __html: achievement,
-                                                  }}
-                                                  contentEditable
-                                                />
-                                              </li>
-                                            )}
-                                          </Draggable>
-                                        ))}
-                                    {provided.placeholder}
-                                  </ul>
-                                )}
-                              </Droppable>
-                            </div>
-                            
-                          )}
-                          
-                        </Draggable>
-                      ))}
-                      {provided.placeholder}
-                    </div>
-                  )}
-                </Droppable>
-              )}
             </div>
-            
           </div>
         </DragDropContext>
       </A4PageWrapper>
@@ -567,7 +471,5 @@ const A4PageWrapper = ({ children }) => {
     </div>
   );
 };
-
-
 
 export default Preview;

@@ -15,7 +15,10 @@ const Language = () => {
   };
 
   const addSkill = () => {
-    setResumeData({ ...resumeData, [skillType]: [...resumeData[skillType], ""] });
+    setResumeData({
+      ...resumeData,
+      [skillType]: [...resumeData[skillType], ""],
+    });
   };
 
   const removeSkill = (index) => {
@@ -49,13 +52,20 @@ const Language = () => {
           id="showLanguages"
           checked={resumeData.showLanguages}
           onChange={handleToggleLanguages}
-          className="w-4 h-4 text-fuchsia-600 bg-gray-100 border-gray-300 rounded focus:ring-fuchsia-500"
+          className="w-4 h-4 text-[deepskyblue] bg-gray-100 border-gray-300 rounded focus:ring-fuchsia-500"
         />
-        <label htmlFor="showLanguages" className="text-sm text-white cursor-pointer">
+        <label
+          htmlFor="showLanguages"
+          className="text-sm text-white cursor-pointer"
+        >
           Display Languages Section
         </label>
       </div>
-      <FormButton size={resumeData[skillType].length} add={addSkill} remove={removeSkill} />
+      <FormButton
+        size={resumeData[skillType].length}
+        add={addSkill}
+        remove={removeSkill}
+      />
     </div>
   );
 };

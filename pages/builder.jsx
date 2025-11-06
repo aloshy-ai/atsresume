@@ -10,7 +10,6 @@ import WorkExperience from "../components/form/WorkExperience";
 import Skill from "../components/form/Skill";
 import PersonalInformation from "../components/form/PersonalInformation";
 import Summary from "../components/form/Summary";
-import Projects from "../components/form/Projects";
 import Education from "../components/form/Education";
 import dynamic from "next/dynamic";
 import Certification from "../components/form/certification";
@@ -66,22 +65,16 @@ export default function Builder(props) {
         />
         <div className="f-col gap-4 md:flex-row justify-evenly max-w-7xl md:mx-auto md:h-screen">
           {!formClose && (
-            <form className="p-4 bg-fuchsia-600 exclude-print md:max-w-[40%] md:h-screen md:overflow-y-scroll">
-              <LoadUnload/>
+            <form className="p-4 bg-[royalblue] exclude-print md:max-w-[40%] md:h-screen md:overflow-y-scroll [&>*:not(:first-child)]:pt-4 [&>*:not(:first-child)]:mt-4 [&>*:not(:first-child)]:border-t [&>*:not(:first-child)]:border-white/30">
+              <LoadUnload />
               <PersonalInformation />
               <SocialMedia />
               <Summary />
               <Education />
               <WorkExperience />
-              <Projects />
-              {
-                resumeData.skills.map((skill, index) => (
-                  <Skill
-                    title={skill.title}
-                    key={index}
-                  />
-                ))
-              }
+              {resumeData.skills.map((skill, index) => (
+                <Skill title={skill.title} key={index} />
+              ))}
               <Language />
               <Certification />
             </form>

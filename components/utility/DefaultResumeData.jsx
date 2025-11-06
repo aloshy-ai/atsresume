@@ -88,7 +88,6 @@ const DefaultResumeData = {
       endYear: "2011-01-01",
     },
   ],
-  projects: [],
   skills: [
     {
       title: "AI/ML Stack",
