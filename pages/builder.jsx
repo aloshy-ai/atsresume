@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import Language from "@/components/form/Language";
 import Meta from "@/components/meta/Meta";
 import FormCP from "@/components/form/FormCP";
@@ -27,6 +27,30 @@ export default function Builder(props) {
 
   // form hide/show
   const [formClose, setFormClose] = useState(false);
+
+  // migrate skills data on mount if needed
+  useEffect(() => {
+    if (resumeData.skills && resumeData.skills.length > 0) {
+      const needsMigration = resumeData.skills.some((skillCategory) =>
+        skillCategory.skills.some((skill) => typeof skill === "string")
+      );
+
+      if (needsMigration) {
+        const migratedData = {
+          ...resumeData,
+          skills: resumeData.skills.map((skillCategory) => ({
+            ...skillCategory,
+            skills: skillCategory.skills.map((skill) =>
+              typeof skill === "string"
+                ? { text: skill, underline: false }
+                : skill
+            ),
+          })),
+        };
+        setResumeData(migratedData);
+      }
+    }
+  }, []);
 
   // Generate dynamic title based on current date and resume data
   const generateTitle = () => {

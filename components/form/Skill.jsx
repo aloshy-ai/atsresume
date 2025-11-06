@@ -11,7 +11,21 @@ const Skill = ({ title }) => {
       ...resumeData.skills.find((skillType) => skillType.title === title)
         .skills,
     ];
-    newSkills[index] = e.target.value;
+    newSkills[index] = { ...newSkills[index], text: e.target.value };
+    setResumeData((prevData) => ({
+      ...prevData,
+      skills: prevData.skills.map((skill) =>
+        skill.title === title ? { ...skill, skills: newSkills } : skill
+      ),
+    }));
+  };
+
+  const handleUnderline = (index, title) => {
+    const newSkills = [
+      ...resumeData.skills.find((skillType) => skillType.title === title)
+        .skills,
+    ];
+    newSkills[index] = { ...newSkills[index], underline: !newSkills[index].underline };
     setResumeData((prevData) => ({
       ...prevData,
       skills: prevData.skills.map((skill) =>
@@ -25,7 +39,7 @@ const Skill = ({ title }) => {
       const skillType = prevData.skills.find(
         (skillType) => skillType.title === title
       );
-      const newSkills = [...skillType.skills, ""];
+      const newSkills = [...skillType.skills, { text: "", underline: false }];
       const updatedSkills = prevData.skills.map((skill) =>
         skill.title === title ? { ...skill, skills: newSkills } : skill
       );
@@ -61,13 +75,20 @@ const Skill = ({ title }) => {
     <div className="flex-col-gap-2">
       <h2 className="input-title">{title}</h2>
       {skillType.skills.map((skill, index) => (
-        <div key={index} className="f-col">
+        <div key={index} className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={skill.underline}
+            onChange={() => handleUnderline(index, title)}
+            className="w-4 h-4 cursor-pointer"
+            title="Underline this skill"
+          />
           <input
             type="text"
             placeholder={title}
             name={title}
-            className="w-full other-input"
-            value={skill}
+            className="flex-1 other-input"
+            value={skill.text}
             onChange={(e) => handleSkill(e, index, title)}
           />
         </div>

@@ -5,13 +5,30 @@ import { ResumeContext } from "@/pages/builder";
 const LoadUnload = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
 
+  // migrate old skills format to new format
+  const migrateSkillsData = (data) => {
+    const migratedData = { ...data };
+    if (migratedData.skills) {
+      migratedData.skills = migratedData.skills.map((skillCategory) => ({
+        ...skillCategory,
+        skills: skillCategory.skills.map((skill) =>
+          typeof skill === "string"
+            ? { text: skill, underline: false }
+            : skill
+        ),
+      }));
+    }
+    return migratedData;
+  };
+
   // load backup resume data
   const handleLoad = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = (event) => {
-      const resumeData = JSON.parse(event.target.result);
-      setResumeData(resumeData);
+      const loadedData = JSON.parse(event.target.result);
+      const migratedData = migrateSkillsData(loadedData);
+      setResumeData(migratedData);
     };
     reader.readAsText(file);
   };
