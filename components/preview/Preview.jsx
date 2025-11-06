@@ -247,7 +247,7 @@ const Preview = () => {
                     title={socialMedia.socialMedia}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 social-media align-center justify-center text-blue-600 hover:underline"
+                    className="inline-flex items-center gap-1 social-media align-center justify-center text-blue-700 hover:underline"
                     // Prevent text overflowing, If the socialMedia.link string is longer than 32 characters, apply the wordWrap and display styles to this <a> tag.
                     // wordWrap: "break-word" breaks the text onto the next line if it's too long,
                     // display: "inline-block" is necessary for wordWrap to work on an inline element like <a>.
@@ -289,7 +289,7 @@ const Preview = () => {
                             href={formatUrl(item.url)}
                             target="_blank"
                             rel="noreferrer"
-                            className="content text-blue-600 hover:underline"
+                            className="content text-blue-700 hover:underline"
                           >
                             {item.school}
                           </a>
@@ -379,7 +379,7 @@ const Preview = () => {
                                   href={item.url ? formatUrl(item.url) : "#"}
                                   target={item.url ? "_blank" : "_self"}
                                   rel={item.url ? "noreferrer" : undefined}
-                                  className="content i-bold text-blue-600 hover:underline"
+                                  className="content i-bold text-blue-700 hover:underline"
                                 >
                                   {item.company}
                                 </a>
