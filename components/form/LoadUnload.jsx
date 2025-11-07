@@ -11,11 +11,16 @@ const LoadUnload = () => {
     if (migratedData.skills) {
       migratedData.skills = migratedData.skills.map((skillCategory) => ({
         ...skillCategory,
-        skills: skillCategory.skills.map((skill) =>
-          typeof skill === "string"
-            ? { text: skill, underline: false }
-            : skill
-        ),
+        skills: skillCategory.skills.map((skill) => {
+          if (typeof skill === "string") {
+            return { text: skill, highlight: false };
+          }
+          // Handle old 'underline' property
+          if (skill.underline !== undefined && skill.highlight === undefined) {
+            return { text: skill.text, highlight: skill.underline };
+          }
+          return skill;
+        }),
       }));
     }
     return migratedData;

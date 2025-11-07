@@ -266,7 +266,7 @@ const Preview = () => {
           {/* two column start */}
           <div className="grid grid-cols-3 gap-6">
             <div className="col-span-1 space-y-2">
-              {resumeData.summary.length > 0 && (
+              {resumeData.showSummary && resumeData.summary.length > 0 && (
                 <div className="mb-1">
                   <h2 className="section-title mb-1 border-b-2 border-gray-300 border-dashed editable" contentEditable suppressContentEditableWarning>
                     Summary

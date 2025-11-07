@@ -32,7 +32,10 @@ export default function Builder(props) {
   useEffect(() => {
     if (resumeData.skills && resumeData.skills.length > 0) {
       const needsMigration = resumeData.skills.some((skillCategory) =>
-        skillCategory.skills.some((skill) => typeof skill === "string")
+        skillCategory.skills.some((skill) =>
+          typeof skill === "string" ||
+          (skill.underline !== undefined && skill.highlight === undefined)
+        )
       );
 
       if (needsMigration) {
@@ -40,11 +43,16 @@ export default function Builder(props) {
           ...resumeData,
           skills: resumeData.skills.map((skillCategory) => ({
             ...skillCategory,
-            skills: skillCategory.skills.map((skill) =>
-              typeof skill === "string"
-                ? { text: skill, underline: false }
-                : skill
-            ),
+            skills: skillCategory.skills.map((skill) => {
+              if (typeof skill === "string") {
+                return { text: skill, highlight: false };
+              }
+              // Handle old 'underline' property
+              if (skill.underline !== undefined && skill.highlight === undefined) {
+                return { text: skill.text, highlight: skill.underline };
+              }
+              return skill;
+            }),
           })),
         };
         setResumeData(migratedData);

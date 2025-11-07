@@ -20,7 +20,7 @@ const Skills = ({ title, skills }) => {
           {skills.map((skill, index) => (
             <span key={index}>
               {index > 0 && ", "}
-              {skill.underline ? (
+              {skill.highlight ? (
                 <span className="bg-blue-100 font-semibold">{skill.text}</span>
               ) : (
                 skill.text

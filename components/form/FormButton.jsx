@@ -11,7 +11,7 @@ const FormButton = ({ size, remove, add }) => {
       >
         <MdAddCircle />
       </button>
-      {size > 0 && (
+      {size > 0 && remove && (
         <button
           type="button"
           onClick={remove}

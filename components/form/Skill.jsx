@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ResumeContext } from "@/pages/builder";
 import FormButton from "@/components/form/FormButton";
+import { MdDelete } from "react-icons/md";
 
 const Skill = ({ title }) => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
@@ -20,12 +21,12 @@ const Skill = ({ title }) => {
     }));
   };
 
-  const handleUnderline = (index, title) => {
+  const handleHighlight = (index, title) => {
     const newSkills = [
       ...resumeData.skills.find((skillType) => skillType.title === title)
         .skills,
     ];
-    newSkills[index] = { ...newSkills[index], underline: !newSkills[index].underline };
+    newSkills[index] = { ...newSkills[index], highlight: !newSkills[index].highlight };
     setResumeData((prevData) => ({
       ...prevData,
       skills: prevData.skills.map((skill) =>
@@ -39,7 +40,7 @@ const Skill = ({ title }) => {
       const skillType = prevData.skills.find(
         (skillType) => skillType.title === title
       );
-      const newSkills = [...skillType.skills, { text: "", underline: false }];
+      const newSkills = [...skillType.skills, { text: "", highlight: false }];
       const updatedSkills = prevData.skills.map((skill) =>
         skill.title === title ? { ...skill, skills: newSkills } : skill
       );
@@ -67,6 +68,22 @@ const Skill = ({ title }) => {
     });
   };
 
+  const deleteSkill = (title, index) => {
+    setResumeData((prevData) => {
+      const skillType = prevData.skills.find(
+        (skillType) => skillType.title === title
+      );
+      const newSkills = skillType.skills.filter((_, i) => i !== index);
+      const updatedSkills = prevData.skills.map((skill) =>
+        skill.title === title ? { ...skill, skills: newSkills } : skill
+      );
+      return {
+        ...prevData,
+        skills: updatedSkills,
+      };
+    });
+  };
+
   const skillType = resumeData.skills.find(
     (skillType) => skillType.title === title
   );
@@ -75,13 +92,13 @@ const Skill = ({ title }) => {
     <div className="flex-col-gap-2">
       <h2 className="input-title">{title}</h2>
       {skillType.skills.map((skill, index) => (
-        <div key={index} className="flex items-center gap-2">
+        <div key={index} className="flex items-center gap-2 hover:bg-blue-900/20 rounded px-2 py-1 -mx-2 -my-1 transition-colors">
           <input
             type="checkbox"
-            checked={skill.underline}
-            onChange={() => handleUnderline(index, title)}
-            className="w-4 h-4 cursor-pointer"
-            title="Underline this skill"
+            checked={skill.highlight}
+            onChange={() => handleHighlight(index, title)}
+            className="w-4 h-4 cursor-pointer flex-shrink-0"
+            title="Highlight this skill"
           />
           <input
             type="text"
@@ -91,12 +108,19 @@ const Skill = ({ title }) => {
             value={skill.text}
             onChange={(e) => handleSkill(e, index, title)}
           />
+          <button
+            type="button"
+            onClick={() => deleteSkill(title, index)}
+            className="flex-shrink-0 p-1 text-[deepskyblue] hover:opacity-70 rounded transition-opacity"
+            title="Delete this skill"
+          >
+            <MdDelete className="text-xl" />
+          </button>
         </div>
       ))}
       <FormButton
         size={skillType.skills.length}
         add={() => addSkill(title)}
-        remove={() => removeSkill(title)}
       />
     </div>
   );

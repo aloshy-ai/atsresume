@@ -1,6 +1,7 @@
 import FormButton from "@/components/form/FormButton";
 import React, { useContext } from "react";
 import { ResumeContext } from "@/pages/builder";
+import { MdDelete } from "react-icons/md";
 
 const WorkExperience = () => {
   const {
@@ -49,11 +50,16 @@ const WorkExperience = () => {
     setResumeData({ ...resumeData, workExperience: newworkExperience });
   };
 
+  const deleteWorkExperience = (index) => {
+    const newworkExperience = resumeData.workExperience.filter((_, i) => i !== index);
+    setResumeData({ ...resumeData, workExperience: newworkExperience });
+  };
+
   return (
     <div className="flex-col-gap-2">
       <h2 className="input-title">Work Experience</h2>
       {resumeData.workExperience.map((workExperience, index) => (
-        <div key={index} className="f-col">
+        <div key={index} className="f-col hover:bg-blue-900/20 rounded px-2 py-2 -mx-2 -my-2 transition-colors">
           <input
             type="text"
             placeholder="Company"
@@ -95,12 +101,12 @@ const WorkExperience = () => {
             value={workExperience.keyAchievements}
             onChange={(e) => handleWorkExperience(e, index)}
           />
-          <div className="flex-wrap-gap-2">
+          <div className="flex items-center gap-2">
             <input
               type="date"
               placeholder="Start Year"
               name="startYear"
-              className="other-input"
+              className="flex-1 other-input"
               value={workExperience.startYear}
               onChange={(e) => handleWorkExperience(e, index)}
             />
@@ -108,17 +114,24 @@ const WorkExperience = () => {
               type="date"
               placeholder="End Year"
               name="endYear"
-              className="other-input"
+              className="flex-1 other-input"
               value={workExperience.endYear}
               onChange={(e) => handleWorkExperience(e, index)}
             />
+            <button
+              type="button"
+              onClick={() => deleteWorkExperience(index)}
+              className="flex-shrink-0 p-1 text-[deepskyblue] hover:opacity-70 rounded transition-opacity"
+              title="Delete this work experience"
+            >
+              <MdDelete className="text-xl" />
+            </button>
           </div>
         </div>
       ))}
       <FormButton
         size={resumeData.workExperience.length}
         add={addWorkExperience}
-        remove={removeWorkExperience}
       />
     </div>
   );
