@@ -39,7 +39,7 @@
 
 @layer components {
   .pi {
-    @apply p-2 mb-2 text-black bg-white rounded text-[0.9rem];
+    @apply p-2 mb-2 text-black-950 bg-white rounded text-[0.9rem];
   }
 
   .profileInput {
@@ -55,7 +55,7 @@
   }
 
   .other-input {
-    @apply p-2 mb-2 text-black bg-white rounded focus:placeholder-transparent;
+    @apply p-2 mb-2 text-black-950 bg-white rounded focus:placeholder-transparent;
   }
 
   .input-title {
