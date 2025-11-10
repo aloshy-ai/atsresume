@@ -147,4 +147,16 @@
     text-align: center;
     z-index: -1;
   }
+
+  /* Prevent breaking individual skill sections */
+  .col-span-1 > div > div > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Prevent breaking language and certification sections */
+  .col-span-1 > div > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
