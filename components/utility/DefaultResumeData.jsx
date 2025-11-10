@@ -3,7 +3,7 @@ const DefaultResumeData = {
   position: "Full Stack Software Engineer",
   contactInformation: "+16472252878",
   email: "ismail@kattakath.com",
-  address: "242 John Garland Blvd, Etobicoke, ON M9V 1N8",
+  address: "24-242 John Garland Blvd, Etobicoke, ON M9V 1N8",
   profilePicture: "",
   showEducationDates: true,
   socialMedia: [
