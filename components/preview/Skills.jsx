@@ -10,6 +10,22 @@ const Skills = ({ title, skills }) => {
     setResumeData({ ...resumeData, skills: newSkills });
   };
 
+  const handleSkillChange = (e, skillIndex) => {
+    const newSkills = [...resumeData.skills];
+    const skillTypeIndex = newSkills.findIndex((skillType) => skillType.title === title);
+    const newText = e.target.innerText.trim();
+
+    if (newText === "") {
+      // Remove the skill from array if text is empty
+      newSkills[skillTypeIndex].skills.splice(skillIndex, 1);
+    } else {
+      // Update the skill text
+      newSkills[skillTypeIndex].skills[skillIndex].text = newText;
+    }
+
+    setResumeData({ ...resumeData, skills: newSkills });
+  };
+
   return (
     skills.length > 0 && (
       <>
@@ -21,9 +37,23 @@ const Skills = ({ title, skills }) => {
             <span key={index}>
               {index > 0 && ", "}
               {skill.highlight ? (
-                <span className="bg-blue-100 font-semibold">{skill.text}</span>
+                <span
+                  className="bg-blue-100 font-semibold editable"
+                  contentEditable
+                  suppressContentEditableWarning
+                  onBlur={(e) => handleSkillChange(e, index)}
+                >
+                  {skill.text}
+                </span>
               ) : (
-                skill.text
+                <span
+                  className="editable"
+                  contentEditable
+                  suppressContentEditableWarning
+                  onBlur={(e) => handleSkillChange(e, index)}
+                >
+                  {skill.text}
+                </span>
               )}
             </span>
           ))}
