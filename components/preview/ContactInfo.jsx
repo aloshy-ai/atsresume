@@ -1,24 +1,45 @@
-import React, {  } from "react";
+import React, { useContext } from "react";
+import { ResumeContext } from "@/pages/builder";
 
 const ContactInfo = ({ mainclass, linkclass, teldata, emaildata, addressdata, telicon, emailicon, addressicon }) => {
+    const { resumeData, setResumeData } = useContext(ResumeContext);
+
     // Helper function to strip formatting from phone number for tel: link
     const getCleanPhoneNumber = (phone) => {
       return phone.replace(/[\s\-\(\)]/g, '');
     };
 
+    const handlePhoneBlur = (e) => {
+      setResumeData({ ...resumeData, contactInformation: e.target.innerText });
+    };
+
+    const handleEmailBlur = (e) => {
+      setResumeData({ ...resumeData, email: e.target.innerText });
+    };
+
+    const handleAddressBlur = (e) => {
+      setResumeData({ ...resumeData, address: e.target.innerText });
+    };
+
     return (
       <div className={mainclass}>
         {teldata && teldata.trim() !== "" && (
-          <a className={linkclass}
+          <a className={`${linkclass} editable`}
             aria-label="Phone Number"
-            href={`tel:${getCleanPhoneNumber(teldata)}`}>
+            href={`tel:${getCleanPhoneNumber(teldata)}`}
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={handlePhoneBlur}>
             {telicon}  {teldata}
           </a>
         )}
         {emaildata && emaildata.trim() !== "" && (
-          <a className={linkclass}
+          <a className={`${linkclass} editable`}
             aria-label="Email Address"
-            href={`mailto:${emaildata}`}>
+            href={`mailto:${emaildata}`}
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={handleEmailBlur}>
             {emailicon} {emaildata}
           </a>
         )}
@@ -28,7 +49,10 @@ const ContactInfo = ({ mainclass, linkclass, teldata, emaildata, addressdata, te
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Address"
-            className={linkclass} >
+            className={`${linkclass} editable`}
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={handleAddressBlur}>
             {addressicon} {addressdata}
           </a>
         )}
