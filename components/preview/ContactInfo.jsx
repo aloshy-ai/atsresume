@@ -23,11 +23,14 @@ const ContactInfo = ({ mainclass, linkclass, teldata, emaildata, addressdata, te
           </a>
         )}
         {addressdata && addressdata.trim() !== "" && (
-          <address
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressdata)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Address"
-            className={linkclass + " not-italic"} >
+            className={linkclass} >
             {addressicon} {addressdata}
-          </address>
+          </a>
         )}
       </div>
     );
