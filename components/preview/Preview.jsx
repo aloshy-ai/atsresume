@@ -391,7 +391,7 @@ const Preview = () => {
                                 />
                               </div>
                               <p className="content i-bold editable" contentEditable suppressContentEditableWarning>{item.position}</p>
-                              <p className="content hyphens-auto editable" contentEditable suppressContentEditableWarning>
+                              <p className="content editable" contentEditable suppressContentEditableWarning>
                                 {item.description}
                               </p>
                               <Droppable
