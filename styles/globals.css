@@ -35,6 +35,10 @@
   .ul-padding-none {
     padding-inline-start: 0;
   }
+
+  .list-disc li::marker {
+    content: "⦿ ";
+  }
 }
 
 @layer components {
