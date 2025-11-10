@@ -1,7 +1,7 @@
 const DefaultResumeData = {
   name: "ISMAIL KATTAKATH",
   position: "Full Stack Software Engineer",
-  contactInformation: "+16472252878",
+  contactInformation: "+1 (647) 225-2878",
   email: "ismail@kattakath.com",
   address: "24-242 John Garland Blvd, Etobicoke, ON M9V 1N8",
   profilePicture: "",

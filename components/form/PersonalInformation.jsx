@@ -26,13 +26,11 @@ const PersonalInformation = ({}) => {
         />
         <input
           type="text"
-          placeholder="Contact Information"
+          placeholder="Contact Information (e.g., +1 (647) 225-2878)"
           name="contactInformation"
           className="pi"
           value={resumeData.contactInformation}
           onChange={handleChange}
-          minLength="10"
-          maxLength="15"
         />
         <input
           type="email"
