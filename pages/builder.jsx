@@ -64,11 +64,19 @@ export default function Builder(props) {
   const generateTitle = () => {
     const now = new Date();
     const yearMonth = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
-    const name = resumeData.name.replace(/\s+/g, '-');
-    const position = resumeData.position.replace(/\s+/g, '-').replace(/\|/g, '-');
-    // Remove consecutive hyphens
-    const cleanName = name.replace(/-+/g, '-');
-    const cleanPosition = position.replace(/-+/g, '-');
+
+    // Convert to PascalCase: split by spaces, capitalize first letter of each word, join together
+    const toPascalCase = (str) => {
+      return str
+        .split(/\s+/)
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join('');
+    };
+
+    // Remove all special characters except spaces, then convert to PascalCase
+    const cleanName = toPascalCase(resumeData.name.replace(/[^a-zA-Z0-9\s]/g, ''));
+    const cleanPosition = toPascalCase(resumeData.position.replace(/[^a-zA-Z0-9\s]/g, ''));
+
     return `${yearMonth}-${cleanName}-${cleanPosition}-Resume`;
   };
 
