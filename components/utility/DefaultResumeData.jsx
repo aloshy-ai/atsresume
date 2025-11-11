@@ -21,7 +21,7 @@ const DefaultResumeData = {
     },
   ],
   summary:
-    "Principal Software Engineer with 15+ years of experience in full-stack web development across modern JavaScript ecosystems, specializing in SSO/federated authentication systems, CI/CD pipelines, and cloud-native distributed architectures. Currently architecting and optimizing production-ready AI inference and RAG systems, centralized MCP Gateways, multi-agent LLM workflows, and scalable generative pipelines.",
+    "Principal Software Engineer combining deep full-stack expertise with cutting-edge AI infrastructure and LLMOps—currently architecting scalable GenAI systems (vLLM, Kubernetes, multi-GPU) while reducing costs 25% and latency 40%. Previously spent 7 years transforming an abandoned healthcare MEAN stack into a 99.5% uptime platform serving nationwide users, implementing enterprise SSO/federated authentication (OAuth 2.0, SAML 2.0) across 5+ partners, and migrating AngularJS to Next.js. Track record of establishing DevOps best practices that reduce deployment time by 92% and incidents by 65% across distributed cloud architectures.",
   showSummary: true,
   education: [
     {
