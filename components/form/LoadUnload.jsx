@@ -49,6 +49,15 @@ const LoadUnload = () => {
     link.click();
   };
 
+  // Generate consistent filename for JSON download matching PDF title format
+  const generateFilename = () => {
+    const now = new Date();
+    const yearMonth = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const name = resumeData.name.replace(/\s+/g, '-');
+    const position = resumeData.position.replace(/\s+/g, '-').replace(/\|/g, '-');
+    return `${yearMonth}-${name}-${position}-Resume.json`;
+  };
+
   return (
     <div className="flex flex-wrap gap-4 mb-2 justify-center">
       <div className="inline-flex flex-row items-center gap-2">
@@ -72,7 +81,7 @@ const LoadUnload = () => {
           onClick={(event) =>
             handleDownload(
               resumeData,
-              resumeData.name + " by ATSResume.json",
+              generateFilename(),
               event
             )
           }

@@ -64,8 +64,8 @@ export default function Builder(props) {
   const generateTitle = () => {
     const now = new Date();
     const yearMonth = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
-    const name = resumeData.name.replace(/\s+/g, '');
-    const position = resumeData.position.replace(/\s+/g, '');
+    const name = resumeData.name.replace(/\s+/g, '-');
+    const position = resumeData.position.replace(/\s+/g, '-').replace(/\|/g, '-');
     return `${yearMonth}-${name}-${position}-Resume`;
   };
 
