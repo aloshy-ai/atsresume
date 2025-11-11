@@ -66,7 +66,10 @@ export default function Builder(props) {
     const yearMonth = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
     const name = resumeData.name.replace(/\s+/g, '-');
     const position = resumeData.position.replace(/\s+/g, '-').replace(/\|/g, '-');
-    return `${yearMonth}-${name}-${position}-Resume`;
+    // Remove consecutive hyphens
+    const cleanName = name.replace(/-+/g, '-');
+    const cleanPosition = position.replace(/-+/g, '-');
+    return `${yearMonth}-${cleanName}-${cleanPosition}-Resume`;
   };
 
   // profile picture
